@@ -10,8 +10,9 @@ namespace ConvertSrtToPlainText
     {
         static void Main(string[] args)
         {
-            if (args.Length != 2)
+            if (args.Length < 1)
             {
+                Console.WriteLine("Lütfen bir .srt dosyası belirtiniz.\n");
                 return;
             }
             var lines = IO.File.ReadAllLines(args[0]);
@@ -37,7 +38,12 @@ namespace ConvertSrtToPlainText
                 }
                 line += l + " ";
             }
-            IO.File.WriteAllLines(args[1], result.ToArray());
+            var outFile = "sonuc.txt";
+            if (args.Length > 1)
+            {
+                outFile = args[1];
+            }
+            IO.File.WriteAllLines(outFile, result.ToArray());
         }
     }
 }
