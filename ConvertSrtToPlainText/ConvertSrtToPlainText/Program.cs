@@ -44,6 +44,7 @@ namespace ConvertSrtToPlainText
                 outFile = args[1];
             }
             IO.File.WriteAllLines(outFile, result.ToArray());
+            Console.WriteLine(args[0] + " dosyası " + outFile + " dosyasına çevrildi.");
         }
     }
 }
