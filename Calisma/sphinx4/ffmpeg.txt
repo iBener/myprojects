@@ -1,4 +1,4 @@
-ffmpeg ile sphinx4 uyumlu ses dosyası oluşturma:
+ffmpeg ile sphinx4 uyumlu ses dosyasÄ± oluÅŸturma:
 
 ffmpeg -i sample.mp4 -acodec pcm_s16le -ac 1 -ar 16000 output.wav
 
