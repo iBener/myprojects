@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DictionaryDialogDebuggerVisualizer.cs" />
+    <Compile Include="ListDialogDebuggerVisualizer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tester.cs" />
   </ItemGroup>
