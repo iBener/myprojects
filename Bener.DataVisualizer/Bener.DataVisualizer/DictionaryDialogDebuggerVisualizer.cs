@@ -2,7 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Threading;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Forms;
+using System.Windows.Media;
 using System.Xml.Linq;
 using IO = System.IO;
 
@@ -28,11 +32,13 @@ namespace Bener.DataVisualizer
                     data = XElement.Parse(sr.ReadToEnd());
                 }
                 var dt = new DataTable();
-                
+
+                var win = new MainWindow();
+                win.ShowDialog();
             }
             catch (System.Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                System.Windows.MessageBox.Show(ex.Message);
             }
         }
     }
