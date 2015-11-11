@@ -47,9 +47,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bener.DataVisualizer\Bener.DataVisualizer.csproj">
+    <ProjectReference Include="..\Bener.DataVisualizer\Bener.DebuggerVisualizer.csproj">
       <Project>{259ba7b8-a11f-4688-bdbd-06678995a72f}</Project>
-      <Name>Bener.DataVisualizer</Name>
+      <Name>Bener.DebuggerVisualizer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -26,19 +26,14 @@ namespace Bener.DataVisualizer
         {
             try
             {
-                var data = new XElement("Result");
-                using (var sr = new IO.StreamReader(objectProvider.GetData()))
-                {
-                    data = XElement.Parse(sr.ReadToEnd());
-                }
-                var dt = new DataTable();
-
-                var win = new MainWindow();
+                var ds = new VisualizerDataSource(objectProvider);
+                var win = new VisualizerWindow();
+                win.SetDataSource(ds);
                 win.ShowDialog();
             }
             catch (System.Exception ex)
             {
-                System.Windows.MessageBox.Show(ex.Message);
+                System.Windows.MessageBox.Show(ex.Message, "Bener Data Visualizer");
             }
         }
     }
@@ -61,16 +56,20 @@ namespace Bener.DataVisualizer
                 foreach (var key in dict.Keys)
                 {
                     var data = new XElement("Item");
-                    data.SetAttributeValue("key", key);
+                    data.SetAttributeValue("Key", key);
                     var obj = dict[key];
                     if (prpt == null)
                     {
                         prpt = new XElement("Properties");
+                        var keyEl = new XElement("Property");
+                        keyEl.SetAttributeValue("Name", "Key");
+                        keyEl.SetAttributeValue("Type", types[0].FullName);
+                        prpt.Add(keyEl);
                         foreach (var prp in obj.GetType().GetProperties())
                         {
                             var p = new XElement("Property");
                             p.SetAttributeValue("Name", prp.Name);
-                            p.SetAttributeValue("Type", prp.DeclaringType.FullName);
+                            p.SetAttributeValue("Type", prp.PropertyType.FullName);
                             prpt.Add(p);
                         }
                     }
