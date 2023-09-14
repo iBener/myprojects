@@ -112,7 +112,7 @@ In summary, EF Core is a more modern and flexible ORM framework that's suitable 
 
 * EF6:
 
-<img src="image-1.png" alt="EF 6 workflows" style="max-width:720px;"/>
+![image](https://github.com/iBener/projets/assets/5037744/fd6dc730-219f-4500-807f-f1caea6d99e0)
 
 ## 2. Getting Started
 
